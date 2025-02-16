@@ -45,7 +45,6 @@ public class auraquestsapi {
 
     public auraquestsapi(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::onResourceReload);
         NeoForge.EVENT_BUS.register(this);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -69,8 +68,5 @@ public class auraquestsapi {
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
-    }
-    private void onResourceReload(AddReloadListenerEvent event) {
-        event.addListener(new QuestManager());
     }
 }
