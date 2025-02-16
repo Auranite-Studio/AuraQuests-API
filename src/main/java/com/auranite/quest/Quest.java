@@ -2,7 +2,7 @@ package com.auranite.quest;
 
 import com.google.gson.annotations.SerializedName;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
+
 import java.util.List;
 
 public class Quest {
@@ -19,7 +19,7 @@ public class Quest {
     // Геттеры
     public String getTitle() { return title; }
     public String getDescription() { return description; }
-    public Item getIcon() { /* ... */ }
+    public ResourceLocation getIcon() { return icon;}
     public List<QuestCondition> getConditions() { return conditions; }
     public QuestReward getRewards() { return rewards; }
 }
